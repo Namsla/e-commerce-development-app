@@ -1,89 +1,109 @@
-// import { Link } from "react-router-dom";
-// import { Search } from "../Sections/search-bar/searchBar";
-// import { useState, useEffect } from "react";
-// import { DropdownLoggedOut } from "../Elements/dropped-down-logged-out";
-// import { DropdownLoggedIn } from "../Elements/dropped-down-loggedin";
-// // import { RiLogoutBoxRLine } from "react-icons/ri";
-// import { useNavigate } from "react-router-dom";
-// import "bootstrap-icons/font/bootstrap-icons.css";
-// import { useCart } from "../../context/CartContext";
-// import NavBar from "../Layout/nav-bar/navBar";
-// import { CartList } from "../../pages/cart-page/cart-list";
+"use client";
+import Link from "next/link";
+import React from "react";
+import { FaSignInAlt } from "react-icons/fa";
 
-// function Header() {
-//   const [darkMode, setDarkMode] = useState(
-//     JSON.parse(localStorage.getItem("darkMode")) || false
-//   );
-//   const [searchSection, setSearchSection] = useState(false);
-//   const [dropdown, setDropdown] = useState(false);
-//   const navigate = useNavigate();
-//   const { cartList } = useCart();
+function Header() {
+  return (
+    <div className="sticky top-0 z-50 bg-white px-4 ">
+      <nav className="  px-2 px-5 text-lg">
+        <div className="flex justify-between">
+          <div>
+            <Link
+              href="/"
+              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg text-lg font-bold"
+            >
+              <div className="flex">
+                <div className="text-7xl">B</div>
+                <div>
+                  <div className="pt-2 pl-2">uy</div>
+                  <div>ooks</div>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center font-bold gap-6">
+              <Link
+                href="/products"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Products
+              </Link>
+              <Link
+                href="/category"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Category
+              </Link>
+              <Link
+                href="/blog"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Why Buy Books
+              </Link>
 
-//   useEffect(() => {
-//     localStorage.setItem("darkMode", JSON.stringify(darkMode));
+              <Link
+                href="/"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Pricing
+              </Link>
 
-//     if (darkMode) {
-//       document.documentElement.classList.add("dark");
-//     } else {
-//       document.documentElement.classList.remove("dark");
-//     }
-//   }, [darkMode]);
+              <Link
+                href="/"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Resources
+              </Link>
 
-//   const token = localStorage.getItem("session-token");
+              <Link
+                href="/blog"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Shop
+              </Link>
 
-//   if (!token) {
-//     return <NavBar />;
-//   }
+              <Link
+                href="/cart"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  className="bi bi-cart-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+              </Link>
+            </div>
 
-//   return (
-//     <>
-//       <div className="sticky top-0 z-50">
-//         <nav className=" bg-amber-100 drop-shadow-lg border-gray-200 dark:bg-gray-900">
-//           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-//             <Link to="/" className="flex items-center">
-//               <img
-//                 src="https://logopond.com/logos/09aca1c77e9d1b111f9b08ea28a3fa9a.png"
-//                 className="h-12 mr-3"
-//                 alt="Bazaar Logo"
-//               />
-//               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-//                 Bazaar
-//               </span>
-//             </Link>
-//             {searchSection && <Search setSearchSection={setSearchSection} />}
-//             <div className="flex items-center relative">
-//               <span
-//                 onClick={() => setDarkMode(!darkMode)}
-//                 className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-gear-wide-connected"
-//               ></span>
+            <Link
+              href="/signin"
+              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative pl-16"
+            >
+              <p className="text-slate-900/80  hover:backdrop-lg px-3 font-bold">
+                Sign In
+              </p>
+            </Link>
+            <p className="text-slate-900/80  hover:backdrop-lg px-3">|</p>
+            <Link
+              href="/signin"
+              className="text-slate-900/80 text-xl hover:text-blue-500 hover:backdrop-lg group relative"
+            >
+              <FaSignInAlt />
+              <div className="hidden text-xs p-2 text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">
+                Sign In
+              </div>
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+}
 
-//               <span
-//                 onClick={() => setSearchSection(!searchSection)}
-//                 className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-search"
-//               ></span>
-//               <Link to="/cart" className="text-gray-700 dark:text-white mr-5">
-//                 <span className="text-2xl bi bi-cart-fill relative">
-//                   <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">
-//                     {cartList.length}
-//                   </span>
-//                 </span>
-//               </Link>
-//               <span
-//                 onClick={() => setDropdown(!dropdown)}
-//                 className="bi bi-person-circle cursor-pointer text-2xl text-gray-700 dark:text-white mr-5"
-//               ></span>
-//               {dropdown &&
-//                 (token ? (
-//                   <DropdownLoggedIn setDropdown={setDropdown} />
-//                 ) : (
-//                   <DropdownLoggedOut setDropdown={setDropdown} />
-//                 ))}
-//             </div>
-//           </div>
-//         </nav>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Header;
+export default Header;

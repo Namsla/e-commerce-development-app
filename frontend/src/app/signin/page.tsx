@@ -11,9 +11,6 @@ import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import Image from "next/image";
 
 const SignIn = () => {
   // console.log(localStorage.getItem("session-token"));
@@ -48,7 +45,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center py-5 h-screen bgimg">
+      <div className="flex justify-center items-center py-5 h-screen bgimg opacity-0.5">
         <Formik
           initialValues={initialvalues}
           onSubmit={handleSubmit}
@@ -56,8 +53,8 @@ const SignIn = () => {
         >
           {() => {
             return (
-              <div className="flex flex-col justify-center items-center w-full h-100vph text-black font-medium font-serif">
-                <Form className="w-[30%] h-120vph bg-black bg-opacity-10 border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0 pt-10 pb-10">
+              <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm text-white font-medium font-serif">
+                <Form className="w-[30%] h-120vph bg-black border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0 pt-10 pb-10">
                   <h1 className="text-3xl mb-8 text-bold text-center">
                     Sign In
                   </h1>

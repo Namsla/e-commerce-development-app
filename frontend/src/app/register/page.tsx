@@ -10,8 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { MdAttachEmail } from "react-icons/Md";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 
 const SignUp = () => {
   const initialvalues = {
@@ -52,16 +50,14 @@ const SignUp = () => {
 
   return (
     <>
-      {" "}
-      <Header />
-      <div className="bgimg h-screen flex justify-center items-center">
+      <div className="bgimg opacity-0.5 h-screen flex justify-center items-center">
         <Formik
           initialValues={initialvalues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          <div className="flex flex-col justify-center items-center w-full h-100vph backdrop-blur-sm text-black font-medium font-serif">
-            <Form className="w-[30%] h-100vph bg-black bg-opacity-10 border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0">
+          <div className="flex flex-col justify-center items-center w-full h-screen backdrop-blur-sm text-white font-medium font-serif">
+            <Form className="w-[30%] h-100vph bg-black border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0">
               <h1 className="text-3xl mb-4 mt-4 text-bold text-center">
                 Register
               </h1>
@@ -106,7 +102,6 @@ const SignUp = () => {
           </div>
         </Formik>
       </div>
-      <Footer />
     </>
   );
 };

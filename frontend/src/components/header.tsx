@@ -5,7 +5,7 @@ import { FaSignInAlt } from "react-icons/fa";
 
 function Header() {
   return (
-    <div className="sticky top-0 z-50 bg-white px-4 ">
+    <div className="sticky top-0 z-50 bg-blue-200 px-4 ">
       <nav className="  px-2 px-5 text-lg">
         <div className="flex justify-between">
           <div>

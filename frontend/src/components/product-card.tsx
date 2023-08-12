@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Rating } from "./rating";
 
 export const ProductCard = ({ product }) => {
   const { id, name, overview, poster, price, rating, best_seller } = product;
@@ -24,9 +25,9 @@ export const ProductCard = ({ product }) => {
           {overview}
         </p>
 
-        {/* <div className="flex items-center my-2">
+        <div className="flex items-center my-2">
           <Rating rating={rating} />
-        </div> */}
+        </div>
 
         <p className="flex justify-between items-center">
           <span className="text-2xl dark:text-gray-200">

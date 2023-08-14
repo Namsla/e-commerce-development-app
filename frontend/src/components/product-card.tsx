@@ -6,7 +6,7 @@ export const ProductCard = ({ product }) => {
   const { id, name, overview, poster, price, rating, best_seller } = product;
 
   return (
-    <div className="m-5 max-w-xs bg-white rounded-lg border border-black shadow-md dark:bg-gray-800 dark:border-black">
+    <div className="m-5 max-w-xs bg-blue-50 rounded-lg border border-gray shadow-md dark:bg-gray-800 dark:border-black">
       <Link href={`/products/${id}`} className="relative">
         {best_seller && (
           <span className="absolute top-4 left-2 px-2 bg-orange-500 bg-opacity-90 text-white rounded">

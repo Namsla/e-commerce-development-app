@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <div className="sticky top-0 z-50 bg-blue-200 px-4 ">
-      <nav className="  px-2 px-5 text-lg">
+      <nav className="px-2 px-5 text-lg">
         <div className="flex justify-between">
           <div>
             <Link
@@ -26,8 +26,8 @@ function Header() {
               </div>
             </Link>
           </div>
-          <div className="flex justify-between items-center">
-            <div className="flex justify-between items-center font-bold gap-6">
+          <div className="flex justify-between items-center relative">
+            <div className="flex justify-between items-center font-bold gap-7">
               <Link
                 href="/products"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
@@ -36,10 +36,10 @@ function Header() {
               </Link>
               <span
                 onClick={() => setDropdown(!dropdown)}
-                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group"
               >
                 Category
-                <i className="bi bi-caret-down-fill">
+                <i className="bi bi-caret-down-fill absolute">
                   {dropdown && <DroppedDownList />}
                 </i>
               </span>

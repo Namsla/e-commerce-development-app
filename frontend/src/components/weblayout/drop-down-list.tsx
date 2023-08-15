@@ -4,7 +4,7 @@ import React from "react";
 
 function DroppedDownList({ setDropdown }) {
   return (
-    <div className="border black rounded flex flex-col gap-0.5 font-serif font-xs font-thin pt-2 pl-2 pr-2 position-fixed dropdown">
+    <div className="border black rounded font-serif font-xs font-thin dropdown bg-blue-300 p-3 pb-2">
       <ul className="text-sm text-gray-700 dark:text-gray-400">
         <Link
           onClick={() => setDropdown(true)}

@@ -2,8 +2,12 @@
 import Link from "next/link";
 import React from "react";
 import { FaSignInAlt } from "react-icons/fa";
+import { useState } from "react";
+import DroppedDownList from "./weblayout/drop-down-list";
 
 function Header() {
+  const [dropdown, setDropdown] = useState(false);
+
   return (
     <div className="sticky top-0 z-50 bg-blue-200 px-4 ">
       <nav className="  px-2 px-5 text-lg">
@@ -30,12 +34,15 @@ function Header() {
               >
                 Products
               </Link>
-              <Link
-                href="/category"
+              <span
+                onClick={() => setDropdown(!dropdown)}
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
               >
                 Category
-              </Link>
+                <i className="bi bi-caret-down-fill">
+                  {dropdown && <DroppedDownList />}
+                </i>
+              </span>
               <Link
                 href="/blog"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"

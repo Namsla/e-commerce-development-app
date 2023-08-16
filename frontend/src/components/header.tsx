@@ -65,14 +65,14 @@ function Header() {
               </Link>
 
               <Link
-                href="/blog"
+                href="/products"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
               >
                 Shop
               </Link>
 
               <Link
-                href="/cart"
+                href="/shopping-cart-page"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
               >
                 <svg

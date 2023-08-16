@@ -63,7 +63,7 @@ export const ProductDetail = () => {
                   {product.size} MB
                 </span>
               </p>
-              {/* <p className="my-3">
+              <p className="my-3">
                 {!inCart && (
                   <button
                     onClick={() => addToCart(product)}
@@ -81,7 +81,7 @@ export const ProductDetail = () => {
                     Remove Item <i className="ml-1 bi bi-trash3"></i>
                   </button>
                 )}
-              </p> */}
+              </p>
               <p className="text-lg text-gray-900 dark:text-slate-200">
                 {product.long_description}
               </p>

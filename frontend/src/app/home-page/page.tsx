@@ -15,16 +15,20 @@ function Homepage() {
             width="80"
             height="70"
           />
-
-          <h1 className="display-5 fw-bold text-body-emphasis text-4xl mb-5 font-mono font-bold mt-5">
-            Welcome To Your Favorite e-Book Store!
-          </h1>
-          <div className="col-lg-6 mx-auto">
-            <p className="lead mb-4 text-md font-bold font-mono">
-              “A great book should leave you with many experiences, and slightly
-              exhausted at the end. You live several lives while reading.”
-            </p>
+          <div className="bg-blue-50 border rounded opacity-0.5 p-3">
+            {" "}
+            <h1 className="display-5 fw-bold text-body-emphasis text-4xl mb-5 font-mono font-bold mt-5">
+              Welcome To Your Favorite e-Book Store!
+            </h1>
+            <div className="col-lg-6 mx-auto">
+              <p className="lead mb-4 text-md font-mono">
+                “A great book should leave you with many experiences, and
+                slightly exhausted at the end. You live several lives while
+                reading.”
+              </p>
+            </div>
           </div>
+
           <div className="px-4 py-5 my-5 text-center mt-20">
             <div className="flex justify-center">
               <Link

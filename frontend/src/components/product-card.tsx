@@ -44,7 +44,7 @@ export const ProductCard = ({ product }) => {
         </div>
 
         <p className="flex justify-between items-center">
-          <span className="text-2xl dark:text-gray-200">
+          <span className="text-2xl font-bold dark:text-gray-200">
             <span>$</span>
             <span>{price}.00</span>
           </span>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from "@/components/rating";
@@ -92,3 +94,5 @@ export const ProductDetail = () => {
     </>
   );
 };
+
+export default ProductDetail;

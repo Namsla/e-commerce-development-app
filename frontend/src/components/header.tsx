@@ -4,9 +4,15 @@ import React from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useState } from "react";
 import DroppedDownList from "./weblayout/drop-down-list";
+import { FaSearch } from "react-icons/fa";
+import { Search } from "./search-bar";
+import { CartList } from "@/app/shopping-cart-page/cart-list";
+import { useCart } from "@/context/CardContext";
 
 function Header() {
   const [dropdown, setDropdown] = useState(false);
+  const [searchSection, setSearchSection] = useState(false);
+  const { cartList } = useCart();
 
   return (
     <div className="sticky top-0 z-50 bg-blue-200 px-4 ">
@@ -26,6 +32,7 @@ function Header() {
               </div>
             </Link>
           </div>
+
           <div className="flex justify-between items-center relative">
             <div className="flex justify-between items-center font-bold gap-7">
               <Link
@@ -44,7 +51,7 @@ function Header() {
                 </i>
               </span>
               <Link
-                href="/blog"
+                href="/"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
               >
                 Why Buy Books
@@ -88,14 +95,11 @@ function Header() {
               </Link>
             </div>
 
-            <Link
-              href="/signin"
-              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative pl-16"
-            >
-              <p className="text-slate-900/80  hover:backdrop-lg px-3 font-bold">
-                Sign In
-              </p>
-            </Link>
+            <p className="text-slate-900/80  hover:backdrop-lg px-3 font-bold ">
+              <FaSearch onClick={() => setSearchSection(!searchSection)} />
+              {searchSection && <Search setSearchSection={setSearchSection} />}
+            </p>
+
             <p className="text-slate-900/80  hover:backdrop-lg px-3">|</p>
             <Link
               href="/signin"

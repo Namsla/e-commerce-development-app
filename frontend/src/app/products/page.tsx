@@ -6,10 +6,16 @@ import { ProductCard } from "@/components/product-card";
 export const ProductsList = () => {
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
+  const search = window.location.search;
+  const searchTerm = new URLSearchParams(search).get("q");
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch(`http://localhost:4000/products`);
+      const response = await fetch(
+        `http://localhost:4000/products?name_like=${
+          searchTerm ? searchTerm : ""
+        }`
+      );
       const data = await response.json();
       setProducts(data);
     }

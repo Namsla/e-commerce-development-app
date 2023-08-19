@@ -1,12 +1,17 @@
+"use client";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export const Search = ({ setSearchSection }) => {
   const searchRef = useRef();
+  const router = useRouter();
+  const [search, setSearch] = useState();
 
   const handleSearch = (event) => {
     event.preventDefault();
     setSearchSection(false);
-    navigate(`/products?q=${searchRef.current.value}`);
+    router.push(`/products?q=${search}`);
   };
 
   return (
@@ -16,6 +21,7 @@ export const Search = ({ setSearchSection }) => {
           <span className="bi bi-search flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"></span>
           <input
             ref={searchRef}
+            onChange={(e) => setSearch(e.target.value)}
             name="search"
             type="text"
             id="simple-search"

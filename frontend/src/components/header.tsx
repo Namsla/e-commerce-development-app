@@ -4,9 +4,15 @@ import React from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useState } from "react";
 import DroppedDownList from "./weblayout/drop-down-list";
+import { FaSearch } from "react-icons/fa";
+import { Search } from "./search-bar";
+import { CartList } from "@/app/shopping-cart-page/cart-list";
+import { useCart } from "@/context/CardContext";
 
 function Header() {
   const [dropdown, setDropdown] = useState(false);
+  const [searchSection, setSearchSection] = useState(false);
+  const { cartList } = useCart();
 
   return (
     <div className="sticky top-0 z-50 bg-blue-200 px-4 ">
@@ -26,8 +32,9 @@ function Header() {
               </div>
             </Link>
           </div>
+
           <div className="flex justify-between items-center relative">
-            <div className="flex justify-between items-center font-bold gap-7">
+            <div className="flex justify-between items-center font-bold gap-7 mr-7">
               <Link
                 href="/products"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
@@ -44,7 +51,7 @@ function Header() {
                 </i>
               </span>
               <Link
-                href="/blog"
+                href="/"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
               >
                 Why Buy Books
@@ -65,14 +72,14 @@ function Header() {
               </Link>
 
               <Link
-                href="/blog"
+                href="/products"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
               >
                 Shop
               </Link>
 
               <Link
-                href="/cart"
+                href="/shopping-cart-page"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
               >
                 <svg
@@ -86,26 +93,24 @@ function Header() {
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                 </svg>
               </Link>
-            </div>
 
-            <Link
-              href="/signin"
-              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative pl-16"
-            >
-              <p className="text-slate-900/80  hover:backdrop-lg px-3 font-bold">
-                Sign In
-              </p>
-            </Link>
-            <p className="text-slate-900/80  hover:backdrop-lg px-3">|</p>
-            <Link
-              href="/signin"
-              className="text-slate-900/80 text-xl hover:text-blue-500 hover:backdrop-lg group relative"
-            >
-              <FaSignInAlt />
-              <div className="hidden text-xs p-2 text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">
-                Sign In
-              </div>
-            </Link>
+              {searchSection && <Search setSearchSection={setSearchSection} />}
+            </div>
+            <div className="flex justify-between p-1 pt-1 ml-5">
+              <span className="text-slate-900/80  hover:backdrop-lg px-3 font-bold ">
+                <FaSearch onClick={() => setSearchSection(!searchSection)} />
+              </span>
+              <p className="text-slate-900/80  hover:backdrop-lg px-3">|</p>
+              <Link
+                href="/signin"
+                className="text-slate-900/80 text-xl hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                <FaSignInAlt />
+                <div className="hidden text-xs p-2 text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">
+                  Sign In
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>

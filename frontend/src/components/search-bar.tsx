@@ -1,10 +1,13 @@
-import { useRef, useState } from "react";
+"use client";
+import { useRef } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export const Search = ({ setSearchSection }) => {
   const searchRef = useRef();
   const router = useRouter();
   const [search, setSearch] = useState();
+
   const handleSearch = (event) => {
     event.preventDefault();
     setSearchSection(false);
@@ -12,7 +15,7 @@ export const Search = ({ setSearchSection }) => {
   };
 
   return (
-    <div className="mx-auto max-w-screen-xl">
+    <div className="mx-auto max-w-screen-sm p-1">
       <form onSubmit={handleSearch} className="flex items-center">
         <div className="relative w-full">
           <span className="bi bi-search flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"></span>

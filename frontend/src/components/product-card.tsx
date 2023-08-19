@@ -1,9 +1,23 @@
 "use client";
 import Link from "next/link";
 import { Rating } from "./rating";
+import { useState, useEffect } from "react";
+import { useCart } from "@/context/CardContext";
 
 export const ProductCard = ({ product }) => {
+  const { cartList, addToCart, removeFromCart } = useCart();
+  const [inCart, setInCart] = useState(false);
   const { id, name, overview, poster, price, rating, best_seller } = product;
+
+  useEffect(() => {
+    const productInCart = cartList.find((item) => item.id === product.id);
+
+    if (productInCart) {
+      setInCart(true);
+    } else {
+      setInCart(false);
+    }
+  }, [cartList, product.id]);
 
   return (
     <div className="m-5 max-w-xs bg-blue-50 rounded-lg border border-gray shadow-md dark:bg-gray-800 dark:border-black">
@@ -30,11 +44,11 @@ export const ProductCard = ({ product }) => {
         </div>
 
         <p className="flex justify-between items-center">
-          <span className="text-2xl dark:text-gray-200">
+          <span className="text-2xl font-bold dark:text-gray-200">
             <span>$</span>
             <span>{price}.00</span>
           </span>
-          {/* {!inCart && (
+          {!inCart && (
             <button
               onClick={() => addToCart(product)}
               className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
@@ -49,7 +63,7 @@ export const ProductCard = ({ product }) => {
             >
               Remove Item <i className="ml-1 bi bi-trash3"></i>
             </button>
-          )} */}
+          )}
         </p>
       </div>
     </div>

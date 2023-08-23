@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
 import { Rating } from "@/components/rating";
 import { useCart } from "@/context/CardContext";
 
@@ -15,6 +15,7 @@ export const ProductDetail = () => {
     async function fetchProducts() {
       const response = await fetch(`http://localhost:4000/products/${id}`);
       const data = await response.json();
+      console.log(data);
       setProduct(data);
     }
     fetchProducts();
@@ -23,7 +24,7 @@ export const ProductDetail = () => {
   return (
     <>
       <main className="h-screen">
-        <section>
+        <section className="bg-blue-50 border rounded m-10 ml-20 mr-20 p-5 opacity-0.99">
           <h1 className="mt-10 mb-5 text-4xl text-center font-bold text-gray-900 dark:text-slate-200">
             {product.name}
           </h1>
@@ -39,7 +40,7 @@ export const ProductDetail = () => {
               />
             </div>
             <div className="max-w-xl my-3">
-              <p className="text-3xl font-bold text-gray-900 dark:text-slate-200">
+              <p className="text-3xl font5-bold text-gray-900 dark:text-slate-200">
                 <span className="mr-1">$</span>
                 <span className="">{product.price}</span>
               </p>

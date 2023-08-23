@@ -11,7 +11,8 @@ export const Search = ({ setSearchSection }) => {
   const handleSearch = (event) => {
     event.preventDefault();
     setSearchSection(false);
-    router.push(`/products?q=${search}`);
+    // router.push(`/products?q=${search}`);
+    window.location.href = `/products?q=${search}`;
   };
 
   return (

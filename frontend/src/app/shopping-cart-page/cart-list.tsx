@@ -15,8 +15,8 @@ export const CartList = () => {
         </p>
       </section>
       <section>
-        {cartList.map((product) => (
-          <CartCard key={product.id} product={product} />
+        {cartList.map((product, index) => (
+          <CartCard key={index} product={product} />
         ))}
       </section>
       <section className="max-w-4xl m-auto">

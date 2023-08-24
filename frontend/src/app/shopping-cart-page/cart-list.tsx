@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { useCart } from "../../context/CardContext";
 import { CartCard } from "./cart-card";

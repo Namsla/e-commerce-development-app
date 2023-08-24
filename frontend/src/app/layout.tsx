@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer";
+import { CartProvider } from "@/context/CardContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
         <div className="bgimg">
           <div className="bg-white/60">
             <Header />
-            {children} <Footer />
+
+            <CartProvider>{children}</CartProvider>
+            <Footer />
           </div>{" "}
         </div>
       </body>

@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useContext, useReducer } from "react";
 import { cartReducer } from "../redux/CardReducer";
 

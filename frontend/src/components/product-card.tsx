@@ -6,6 +6,8 @@ import { useCart } from "@/context/CardContext";
 
 export const ProductCard = ({ product }) => {
   const { cartList, addToCart, removeFromCart } = useCart();
+
+  
   const [inCart, setInCart] = useState(false);
   const { id, name, overview, poster, price, rating, best_seller } = product;
 

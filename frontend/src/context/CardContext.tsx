@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useReducer } from "react";
 import { cartReducer } from "../redux/CardReducer";
+import {useEffect} from 'react';
 
 const cartInitialState = {
   cartList: [],
@@ -11,6 +12,8 @@ const CartContext = createContext(cartInitialState);
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+
+
 
   function addToCart(product) {
     const updatedList = state.cartList.concat(product);

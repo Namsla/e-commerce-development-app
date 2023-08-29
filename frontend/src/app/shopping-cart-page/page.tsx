@@ -8,7 +8,7 @@ export const CartPage = () => {
   const { cartList } = useCart();
 
   return (
-    <CartProvider>
+    <>
       <div className="h-screen">
         <div className="dark:bg-gray-800 flex flex-col items-center">
           <main>
@@ -16,7 +16,7 @@ export const CartPage = () => {
           </main>
         </div>
       </div>
-    </CartProvider>
+    </>
   );
 };
 

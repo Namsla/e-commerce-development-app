@@ -1,16 +1,19 @@
+import { setCartLocal } from "@/utils/cartLocalStorage";
+
 export const cartReducer = (state, action) => {
   const { type, payload } = action;
+  setCartLocal({ ...state, cartList: payload.products, total: payload.total })
 
   switch (type) {
-    case "ADD_TO_CART":
+    case "ADD_TO_CART":{
       return { ...state, cartList: payload.products, total: payload.total };
-
-    case "REMOVE_FROM_CART":
+}
+    case "REMOVE_FROM_CART":{
       return { ...state, cartList: payload.products, total: payload.total };
-
-    case "CLEAR_CART":
+}
+    case "CLEAR_CART":{
       return { ...state, cartList: payload.products, total: payload.total };
-
+}
     default:
       throw new Error("No case found!");
   }

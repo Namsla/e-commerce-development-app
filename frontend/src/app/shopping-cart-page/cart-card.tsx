@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link  from "next/link";
 import { useCart } from "../../context/CardContext";
 
 export const CartCard = ({ product }) => {
@@ -15,7 +15,7 @@ export const CartCard = ({ product }) => {
           />
         </a>
         <div className="">
-          <Link to={`products/${product.id}`}>
+          <Link href={`products/${product.id}`}>
             <p className="text-lg ml-2 dark:text-slate-200">{product.name}</p>
           </Link>
           <button

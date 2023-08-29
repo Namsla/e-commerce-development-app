@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { ProductCard } from "@/components/product-card";
-import { CartProvider } from "@/context/CardContext";
 
 export const ProductsList = () => {
   const [show, setShow] = useState(false);
@@ -25,7 +24,6 @@ export const ProductsList = () => {
   }, [searchTerm, window.location]);
   return (
     <>
-      <CartProvider>
         <div className="dark:bg-gray-800 dark:border-gray-700 px-4">
           <section>
             <div className="pt-5 flex justify-between pl-5">
@@ -41,7 +39,6 @@ export const ProductsList = () => {
             </div>
           </section>
         </div>
-      </CartProvider>
     </>
   );
 };

@@ -1,8 +1,13 @@
 "use client";
 import { createContext, useContext, useReducer } from "react";
 import { cartReducer } from "../redux/CardReducer";
+import {useEffect} from 'react';
+import { getCartLocal, setCartLocal } from "@/utils/cartLocalStorage";
 
-const cartInitialState = {
+
+
+
+const cartInitialState = getCartLocal()|| {
   cartList: [],
   total: 0,
 };
@@ -11,6 +16,13 @@ const CartContext = createContext(cartInitialState);
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+
+
+  useEffect(()=>{
+    if(!getCartLocal()){
+      setCartLocal(state)
+    }
+  },[state])
 
   function addToCart(product) {
     const updatedList = state.cartList.concat(product);

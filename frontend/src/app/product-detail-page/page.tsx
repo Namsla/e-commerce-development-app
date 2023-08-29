@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
 import { Rating } from "@/components/rating";
 import { useCart } from "@/context/CardContext";
 

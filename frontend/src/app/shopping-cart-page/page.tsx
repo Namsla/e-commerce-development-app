@@ -10,7 +10,7 @@ export const CartPage = () => {
   return (
     <>
       <div className="h-screen">
-        <div className="dark:bg-gray-800 flex flex-col items-center">
+        <div className="dark:bg-gray-800 flex flex-col items-center mt-10">
           <main>
             <CartList />
           </main>

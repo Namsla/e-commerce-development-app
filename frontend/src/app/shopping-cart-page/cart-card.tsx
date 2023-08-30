@@ -1,11 +1,11 @@
-import Link  from "next/link";
+import Link from "next/link";
 import { useCart } from "../../context/CardContext";
 
 export const CartCard = ({ product }) => {
   const { removeFromCart } = useCart();
 
   return (
-    <div className="flex flex-wrap justify-between border-b dark:border-slate-700 max-w-4xl m-auto p-2 mb-5 ">
+    <div className="flex flex-wrap justify-between border-b dark:border-slate-700 max-w-5xl m-auto p-2 mb-5 ">
       <div className="flex">
         <a href="">
           <img
@@ -26,7 +26,7 @@ export const CartCard = ({ product }) => {
           </button>
         </div>
       </div>
-      <div className="text-lg m-2 dark:text-slate-200">
+      <div className="text-lg font-bold m-2 dark:text-slate-200">
         <span>${product.price}</span>
       </div>
     </div>

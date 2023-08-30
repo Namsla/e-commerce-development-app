@@ -10,7 +10,7 @@ export const CartList = () => {
   const { cartList, total } = useCart();
 
   return (
-    <>
+    <div className="border-black rounded bg-white p-4 pt-1 pb-1">
       <section>
         <p className="text-2xl text-center font-semibold dark:text-slate-100 my-10 underline underline-offset-8">
           My Cart ({cartList.length})
@@ -25,7 +25,7 @@ export const CartList = () => {
         <div className="flex flex-col p-2 border-b dark:border-slate-700 text-lg dark:text-slate-100">
           <p className="flex justify-between my-2">
             <span className="font-semibold">Total Amount:</span>
-            <span>${total}</span>
+            <span className="font-bold">${total}.00</span>
           </p>
         </div>
         <div className="text-right my-5">
@@ -39,6 +39,6 @@ export const CartList = () => {
         </div>
       </section>
       {checkout && <Checkout setCheckout={setCheckout} />}
-    </>
+    </div>
   );
 };

@@ -1,18 +1,22 @@
 "use client";
-import { RootState } from "@/redux/store";
+import { useWishList } from "@/context/WishListContext";
 import React from "react";
-import { useSelector } from "react-redux";
+import { WishList } from "./wish-list";
 
-const page = () => {
-  const items = useSelector((state: RootState) => state.wishlist.item);
-  console.log(items);
+export const WishListPage = () => {
+  const { wishList } = useWishList();
+
   return (
-    <div>
-      {items.map((item) => (
-        <div key={item.id}>{item.name}</div>
-      ))}
-    </div>
+    <>
+      <div className="h-screen">
+        <div className="dark:bg-gray-800 flex flex-col items-center mt-10">
+          <main>
+            <WishList />
+          </main>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default page;
+export default WishListPage;

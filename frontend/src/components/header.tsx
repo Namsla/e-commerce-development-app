@@ -8,16 +8,18 @@ import { FaSearch } from "react-icons/fa";
 import { Search } from "./search-bar";
 import { useCart } from "@/context/CardContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useWishList } from "@/context/WishListContext";
 
 function Header() {
   const [dropdown, setDropdown] = useState(false);
   const [searchSection, setSearchSection] = useState(false);
   const { cartList } = useCart();
+  const { wishList } = useWishList();
 
   return (
     <div className="sticky top-0 z-50 bg-blue-200 px-4 ">
       <nav className="px-2 px-5 text-lg">
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-5px">
           <div>
             <Link
               href="/"
@@ -58,31 +60,22 @@ function Header() {
               </Link>
 
               <Link
-                href="/"
-                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+                href="/wishlist"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg mr-5 group relative"
               >
-                Pricing
-              </Link>
-
-              <Link
-                href="/"
-                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
-              >
-                Resources
-              </Link>
-
-              <Link
-                href="/products"
-                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
-              >
-                Shop
+                Wish List
+                <span className="pl-1 pr-1 text-2xl bi bi-suit-heart-fill relative">
+                  <span className="text-white text-sm absolute -top-1.5 left-5.5 bg-green-500 px-1 rounded-full ">
+                    {wishList.length}{" "}
+                  </span>
+                </span>
               </Link>
 
               <Link
                 href="/shopping-cart-page"
                 className="text-gray-700 dark:text-white mr-5 group relative"
               >
-                <span className="text-2xl bi bi-cart-fill relative">
+                <span className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg text-2xl bi bi-cart-fill relative">
                   <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">
                     {cartList.length}
                   </span>

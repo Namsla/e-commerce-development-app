@@ -5,7 +5,7 @@ import { WishListCard } from "../wishlist/wish-list-card";
 import Link from "next/link";
 
 export const WishList = () => {
-  const { wishList, total } = useWishList();
+  const { wishList } = useWishList();
 
   return (
     <div className="border-black rounded bg-white p-4 pt-1 pb-1">

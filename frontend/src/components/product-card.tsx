@@ -3,11 +3,12 @@ import Link from "next/link";
 import { Rating } from "./rating";
 import { useState, useEffect } from "react";
 import { useCart } from "@/context/CardContext";
+import { useWishList } from "@/context/WishListContext";
 
 export const ProductCard = ({ product }) => {
   const { cartList, addToCart, removeFromCart } = useCart();
-
-  
+  const { wishList, addToWishList, removeFromWishList } = useWishList();
+  const [inWishList, setInWishList] = useState(false);
   const [inCart, setInCart] = useState(false);
   const { id, name, overview, poster, price, rating, best_seller } = product;
 
@@ -21,6 +22,16 @@ export const ProductCard = ({ product }) => {
     }
   }, [cartList, product.id]);
 
+  useEffect(() => {
+    const productInWishList = wishList.find((item) => item.id === product.id);
+
+    if (productInWishList) {
+      setInWishList(true);
+    } else {
+      setInWishList(false);
+    }
+  }, [wishList, product.id]);
+
   return (
     <div className="m-5 max-w-xs bg-blue-50 rounded-lg border border-gray shadow-md dark:bg-gray-800 dark:border-black">
       <Link href={`/products/${id}`} className="relative">
@@ -29,8 +40,19 @@ export const ProductCard = ({ product }) => {
             Best Seller
           </span>
         )}
+
+        {!inWishList && (
+          <button
+            onClick={() => addToWishList(product)}
+            className="inline-flex items-center text-sm font-small text-center text-black bg-green-100 rounded-lg hover:bg-blue-100 absolute top-4 right-2 border rounded p-1 pr-2"
+          >
+            <i className="ml-1 bi bi-suit-heart-fill"></i>
+          </button>
+        )}
+
         <img className="rounded-t-lg w-full h-64" src={poster} alt={name} />
       </Link>
+
       <div className="p-5">
         <Link href={`/products/${id}`}>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -50,12 +72,13 @@ export const ProductCard = ({ product }) => {
             <span>$</span>
             <span>{price}.00</span>
           </span>
+
           {!inCart && (
             <button
               onClick={() => addToCart(product)}
               className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
             >
-              Add To Cart <i className="ml-1 bi bi-plus-lg"></i>
+              Add To Cart <i className="ml-1 bi bi-bag-plus"></i>
             </button>
           )}
           {inCart && (

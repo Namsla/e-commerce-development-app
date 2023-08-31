@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer";
 import { CartProvider } from "@/context/CardContext";
+import { WishListProvider } from "@/context/WishListContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +23,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="bgimg">
           <div className="bg-white/60">
-            <Header />
 
-            <CartProvider>{children}</CartProvider>
+            <CartProvider>
+              <WishListProvider>
+            <Header />
+                {children}</WishListProvider></CartProvider>
             <Footer />
           </div>{" "}
         </div>

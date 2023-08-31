@@ -14,6 +14,7 @@ const WishListContext = createContext(wishListInitialState);
 export const WishListProvider = ({ children }) => {
   const [state, dispatch] = useReducer(wishListReducer, wishListInitialState);
 
+  console.log(state)
   useEffect(() => {
     if (!getWishListLocal()) {
       setWishListLocal(state);
@@ -21,8 +22,11 @@ export const WishListProvider = ({ children }) => {
   }, [state]);
 
   function addToWishList(product) {
+
     const updatedList = state.wishList.concat(product);
     const updatedTotal = state.total + product.price;
+
+    console.log("updated",updatedList)
 
     dispatch({
       type: "ADD_TO_WISHLIST",
@@ -63,6 +67,8 @@ export const WishListProvider = ({ children }) => {
     removeFromWishList,
     clearWishlist,
   };
+
+  console.log(value)
 
   return (
     <WishListContext.Provider value={value}>

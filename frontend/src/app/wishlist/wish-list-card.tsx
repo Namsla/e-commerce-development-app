@@ -23,7 +23,7 @@ export const WishListCard = ({ product }) => {
             onClick={() => removeFromWishList(product)}
             className="text-base ml-2 text-red-400"
           >
-            Remove From Wish List
+            Remove
           </button>
         </div>
       </div>

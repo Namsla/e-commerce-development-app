@@ -6,7 +6,7 @@ export const WishListCard = ({ product }) => {
   const { removeFromWishList } = useWishList();
 
   return (
-    <div className="flex flex-wrap justify-between border-b dark:border-slate-700 max-w-5xl m-auto p-2 mb-5 h-screen">
+    <div className="flex flex-wrap justify-between border-b dark:border-slate-700 max-w-5xl m-auto p-2 mb-5">
       <div className="flex">
         <a href="">
           <img

@@ -3,5 +3,5 @@ export const getWishListLocal = () => {
 };
 
 export const setWishListLocal = (data: any) => {
-  return localStorage.setItem("cart", JSON.stringify(data));
+  return localStorage.setItem("wishlist", JSON.stringify(data));
 };

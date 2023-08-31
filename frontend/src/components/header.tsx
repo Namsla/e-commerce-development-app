@@ -77,7 +77,7 @@ function Header() {
               >
                 <span className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg text-2xl bi bi-cart-fill relative">
                   <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">
-                    {cartList.length}
+                    {cartList?.length}
                   </span>
                 </span>
               </Link>

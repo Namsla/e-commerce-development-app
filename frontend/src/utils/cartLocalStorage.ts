@@ -1,6 +1,4 @@
 
-
-
 export const getCartLocal =() =>{
     return JSON.parse(localStorage.getItem("cart"))
 }

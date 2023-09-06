@@ -1,5 +1,11 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "Namsla@gmail.com",
+      "password": "$2a$10$f9Czwe0p/Gq2UCJt3sdVKem6OJZF.eaV3Gz/T2FliMaepdmpPQbfS",
+      "id": 1
+    }
+  ],
   "products": [
     {
       "id": 10001,
@@ -181,7 +187,6 @@
       "size": 1,
       "best_seller": false
     },
-
     {
       "id": 10016,
       "name": "The Game Theory",
@@ -194,7 +199,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10017,
       "name": "The Corporate Finance Book",
@@ -207,7 +211,6 @@
       "size": 1,
       "best_seller": false
     },
-
     {
       "id": 10018,
       "name": "The Black Swan",
@@ -244,7 +247,6 @@
       "size": 1,
       "best_seller": false
     },
-
     {
       "id": 10021,
       "name": "Harry Potter and The Cursed Child",
@@ -281,7 +283,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10024,
       "name": "The Truths We Hold",
@@ -294,7 +295,6 @@
       "size": 1,
       "best_seller": false
     },
-
     {
       "id": 10025,
       "name": "Becoming",
@@ -307,7 +307,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10026,
       "name": "Famous Five",
@@ -320,7 +319,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10027,
       "name": "Nancy Drew",
@@ -359,7 +357,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10020,
       "name": "Credit Risk",
@@ -373,7 +370,6 @@
       "best_seller": false
     }
   ],
-
   "computer_books": [
     {
       "id": 10001,
@@ -595,7 +591,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10024,
       "name": "The Truths We Hold",
@@ -608,7 +603,6 @@
       "size": 1,
       "best_seller": false
     },
-
     {
       "id": 10025,
       "name": "Becoming",
@@ -635,7 +629,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10017,
       "name": "The Corporate Finance Book",
@@ -648,7 +641,6 @@
       "size": 1,
       "best_seller": false
     },
-
     {
       "id": 10018,
       "name": "The Black Swan",
@@ -699,7 +691,6 @@
       "size": 1,
       "best_seller": true
     },
-
     {
       "id": 10027,
       "name": "Nancy Drew",

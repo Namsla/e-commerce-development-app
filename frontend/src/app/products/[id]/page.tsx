@@ -28,7 +28,7 @@ export const ProductDetail = () => {
     <>
       <CartProvider>
         <WishListProvider>
-          <main className="h-screen">
+          <main className="">
             <section className="bg-blue-50 border rounded m-10 ml-20 mr-20 p-5 opacity-0.99">
               <h1 className="mt-10 mb-5 text-4xl text-center font-bold text-gray-900 dark:text-slate-200">
                 {product.name}
